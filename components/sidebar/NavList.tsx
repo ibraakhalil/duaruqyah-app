@@ -37,7 +37,7 @@ const NavList = ({ isPathName }: { isPathName: boolean }) => {
                 id='category'
                 className="my-2 rounded-lg overflow-hidden hover:scale-105 active:scale-95 transition-all"
             >
-                <Link href={category.link} className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary", { "justify-center border-none bg-transparent": isPathName })}>
+                <Link href={`/${category.link}`} className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary", { "justify-center border-none bg-transparent": isPathName })}>
                     <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
                         <Image id="cat-img" className="" src={`/icons/${category.icon}`} width={20} height={20} alt='Home' />
                     </div>
