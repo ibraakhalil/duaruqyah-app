@@ -11,8 +11,6 @@ import { useParams } from "next/navigation";
 export default function CategorySidebar({ data }) {
     const [filtCategories, setFiltCategories] = useState(data.categories)
     const { id } = useParams()
-    const filtered = data.duas.filter((item) => item.dua_name_en?.startsWith('A'))
-
 
     const handleSearch = (e) => {
         const value = e.currentTarget.value.toLowerCase()
