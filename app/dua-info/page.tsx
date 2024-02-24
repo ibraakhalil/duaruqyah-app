@@ -8,7 +8,7 @@ const DuaInfo = () => {
         <div className="h-full">
             <Swiper className='bg-blue-500' />
             <div className="grid grid-cols-3 gap-x-8 gap-y-4 mt-8">
-                {array.map((item, i) => <Link href={''}>
+                {array.map((item, i) => <Link key={i} href={''}>
                     <DuaCard word={i + 1} title="Conditions of dua being accepted by Allaah" />
                 </Link>)}
             </div>

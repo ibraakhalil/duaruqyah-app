@@ -6,7 +6,7 @@ import PlayerAnimation from './PlayerAnimation';
 
 const AudioPlayer = () => {
     return (
-        <div className='flex  p-6 px-8 bg-[url("/images/ruqyahPlayer.jpg")] bg-no-repeat bg-cover rounded-[36px] gap-8'>
+        <div className='flex  p-6 px-8 bg-[url("/images/ruqyahPlayer.jpg")] bg-no-repeat bg-cover bg-center rounded-[36px] gap-8'>
             <div className='flex-grow'>
                 <div>
                     <p className='text-white mb-4'>Brief Ruqyah</p>

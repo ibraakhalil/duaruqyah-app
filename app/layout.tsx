@@ -4,8 +4,6 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Header from "@/components/header/Header"
 import Setting from "@/components/setting/Setting";
-
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -13,11 +11,16 @@ export const metadata: Metadata = {
   description: "Application of IRD Foundation",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: LayoutProps) {
+
   return (
-    <html className="bg-bg" lang="en">
+    <html suppressHydrationWarning={true} className="bg-bg" lang="en">
       <body className={inter.className}>
-        <div className="relative h-[100vh] p-[1.5rem] px-[2.5rem] flex gap-4">
+        <div className="relative h-[100vh] p-[1.5rem] px-[2.5rem] max-2xl:px-[1.5rem] flex gap-4 max-2xl:gap-2">
           <Sidebar />
           <div className="flex-grow">
             <Header />

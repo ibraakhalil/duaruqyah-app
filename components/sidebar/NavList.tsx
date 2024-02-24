@@ -1,45 +1,12 @@
 "use client"
+import { sidebarCatsData } from "@/constants/constants";
+import cn from "@/utils/cn";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
 
-const NavList = () => {
-    const categories: { name: string; icon: string; link: string }[] = [{
-        name: "Home",
-        icon: 'home.svg',
-        link: '/'
-    },
-    {
-        name: "All Duas",
-        icon: 'alldua.svg',
-        link: 'alldua'
-    },
-    {
-        name: "Memorize",
-        icon: 'memorize.svg',
-        link: 'memorize'
-    },
-    {
-        name: "Bookmark",
-        icon: 'bookmark.svg',
-        link: 'bookmark'
-    },
-    {
-        name: "Ruqyah",
-        icon: 'ruqyah.svg',
-        link: 'ruqyah'
-    },
-    {
-        name: "Dua Info",
-        icon: 'dua-info.svg',
-        link: 'dua-info'
-    },
-    {
-        name: "Books",
-        icon: 'books.svg',
-        link: 'books'
-    }]
+const NavList = ({ isPathName }: { isPathName: boolean }) => {
 
     useEffect(() => {
         const categoryElem = document.querySelector('#category')!
@@ -48,7 +15,6 @@ const NavList = () => {
         catImgg.src = "/icons/fill/home.svg"
     }, [])
 
-
     const handleClick = (e: any) => {
         const categoryList = document.querySelectorAll('#category')
         const target = e.currentTarget
@@ -56,26 +22,26 @@ const NavList = () => {
         categoryList.forEach((item, i) => {
             item.classList.remove('active')
             const catImg = item.querySelector("#cat-img") as HTMLImageElement
-            catImg.src = `/icons/${categories[i].icon}`
+            catImg.src = `/icons/${sidebarCatsData[i].icon}`
         })
         target.classList.add('active')
-        target.querySelector("#cat-img").src = `/icons/fill/${categories[index].icon}`
+        target.querySelector("#cat-img").src = `/icons/fill/${sidebarCatsData[index].icon}`
     }
 
     return (
-        <ul>
-            {categories.map((category, i) => <li
+        <ul className={cn({ "my-10 mb-12": isPathName })}>
+            {sidebarCatsData.map((category, i) => <li
                 onClick={handleClick}
                 key={i}
                 data-index={i}
                 id='category'
                 className="my-2 rounded-lg overflow-hidden hover:scale-105 active:scale-95 transition-all"
             >
-                <Link href={category.link} className="flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary">
+                <Link href={category.link} className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary", { "justify-center border-none bg-transparent": isPathName })}>
                     <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
                         <Image id="cat-img" className="" src={`/icons/${category.icon}`} width={20} height={20} alt='Home' />
                     </div>
-                    <h2 className="text-primary text-sm">{category.name}</h2>
+                    <h2 className={cn("text-primary text-sm", { "hidden": isPathName })}>{category.name}</h2>
                 </Link>
             </li>)}
         </ul>
