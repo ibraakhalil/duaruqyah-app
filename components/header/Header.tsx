@@ -5,22 +5,12 @@ import Image from 'next/image'
 import { MdArrowDropDown } from "react-icons/md";
 import HeaderModal from './HeaderModal';
 import { usePathname } from 'next/navigation';
+import { nameWithUrl } from '@/constants/constants';
+
 
 function Header() {
     const [modalShow, setModalShow] = useState(false)
     const pathname: string = usePathname()
-    const nameWithUrl: any = {
-        '/': "Home Page",
-        '/alldua': "All Duas",
-        '/memorize': "Memorize",
-        '/bookmark': "Bookmark",
-        '/ruqyah': "Ruqyah",
-        '/dua-info': "Dua Info",
-        '/books': "Books",
-        '/all-categories': "All Categories",
-        '/comingsoon': "Coming Soon",
-        '/duas': "Duas Page",
-    }
 
     const handleModalShow = (e: any) => {
         setModalShow(!modalShow)
@@ -36,7 +26,7 @@ function Header() {
     return (
         <div className='flex justify-between mb-4 px-2' >
             <div className='flex justify-between items-center flex-grow'>
-                <h1 className='text-2xl'>{nameWithUrl[pathname] ?? 'Page'}</h1>
+                <h1 className='text-2xl'>{nameWithUrl[pathname] ?? pathname.includes('duas') ? "Duas Page" : "Page"}</h1>
                 <Search />
             </div>
             <div className='flex items-center' >

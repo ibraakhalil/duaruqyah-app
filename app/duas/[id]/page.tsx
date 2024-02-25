@@ -17,12 +17,12 @@ async function page({ params }: { params: any }) {
 
     return (
         <div className='sidebar-thin content-wrapper scroll-smooth  h-[calc(100vh-110px)] overflow-y-auto pr-2'>
-            {subCategories?.filter((item: any) => item.cat_id == id)?.map((items: any, i: any) => <div key={i}>
-                <div id={`${items.subcat_id}`} className="subcategory-name bg-white rounded-xl mb-4 p-4 font-medium">
-                    <p><span className='text-primary'>Section:</span> {items.subcat_name_en}</p>
+            {subCategories?.filter((item: any) => item.cat_id == id)?.map((subCat: any, i: any) => <div key={i}>
+                <div id={`sub_cat_${subCat.subcat_id}`} className="subcategory-name bg-white rounded-xl mb-4 p-4 font-medium">
+                    <p><span className='text-primary'>Section:</span> {subCat.subcat_name_en}</p>
                 </div>
                 <div className="items">
-                    {duas?.filter((x: any) => x.subcat_id === items.subcat_id)?.map((item: any, i: number) => <div id={item.dua_id} key={i} className='item bg-white mb-4 rounded-xl p-6'>
+                    {duas?.filter((x: any) => x.subcat_id === subCat.subcat_id)?.map((item: any, i: number) => <div id={`dua_${item.dua_id}`} key={i} className='item bg-white mb-4 rounded-xl p-6'>
                         <div className="header flex items-center gap-4 text-primary font-medium">
                             <Image src={'/icons/duacard.svg'} width={40} height={40} alt='img' />
                             <p className='font-semibold'>{item.dua_id}. {item.dua_name_en}  </p>

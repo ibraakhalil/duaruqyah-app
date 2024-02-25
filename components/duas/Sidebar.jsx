@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import CategoryCard from "../category/CategoryCard";
 import SubCatList from "./SubCatList";
@@ -12,11 +12,22 @@ export default function CategorySidebar({ data }) {
     const [filtCategories, setFiltCategories] = useState(data.categories)
     const { id } = useParams()
 
+    useEffect(() => {
+        const target = document.querySelector(`#cat_${id}`)
+        target?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
+        });
+    }, [])
+
+
     const handleSearch = (e) => {
         const value = e.currentTarget.value.toLowerCase()
         const searchCategory = data.categories.filter(item => item.cat_name_en.toLowerCase().includes(value))
         setFiltCategories(searchCategory);
     }
+
 
     return (
         <div className="min-w-[350px] max-w-[350px] h-[calc(100vh-110px)] rounded-xl overflow-hidden bg-white max-[1024px]:absolute left-0 max-[1024px]:translate-x-[-100%]">
@@ -25,9 +36,9 @@ export default function CategorySidebar({ data }) {
                 <CiSearch />
                 <input onChange={handleSearch} className="outline-none text-[14px]" type="text" placeholder="Search by categories" />
             </div>
-            <div className="sidebar-thin h-[calc(100vh-238px)] overflow-auto p-2">
+            <div className="sidebar-thin h-[calc(100vh-238px)] overflow-y-auto p-2">
                 {filtCategories.map((category, i) => <div key={i} className="mb-2">
-                    <Link href={`${category.cat_id}`}>
+                    <Link href={`/duas/${category.cat_id}`}>
                         <div className={cn("rounded-xl hover:bg-bg", { "bg-bg": id == i + 1 })}>
                             <CategoryCard category={category} />
                         </div>

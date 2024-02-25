@@ -64,12 +64,15 @@
     @apply text-primary;
   }
 
-  .dua-player .rhap_progress-container {
+  .dua-player .rhap-container {
+    @apply hidden;
+  }
+ .dua-player .rhap_progress-container {
     @apply hidden max-w-[auto] mr-3;
   }
 
   .dua-player.play .rhap_progress-container {
-    @apply block;
+    @apply flex;
   }
 
   .dua-player .rhap_progress-indicator {

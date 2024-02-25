@@ -1,0 +1,58 @@
+
+
+.ruqyah .rhap_main {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
+.ruqyah .rhap_container {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	line-height: 1;
+	font-family: inherit;
+	width: 100%;
+	padding: 10px 15px;
+    background: transparent;
+}
+
+.ruqyah .rhap_container svg {
+	vertical-align: initial;
+	color: white;
+}
+
+.ruqyah .rhap_time {
+	color: #fff;
+	font-size: 16px;
+	-moz-user-select: none;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.ruqyah .rhap_progress-indicator {
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 3;
+	width: 20px;
+	height: 20px;
+	margin-left: -10px;
+	top: -8px;
+	background: #fff;
+	border-radius: 50px;
+	box-shadow: rgba(134, 134, 134, 0.5) 0 0 5px;
+}
+.ruqyah .rhap_volume-indicator {
+	box-sizing: border-box;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	margin-left: -6px;
+	left: 0;
+	top: -4px;
+	background: #ffffff;
+	opacity: 0.9;
+	border-radius: 50px;
+	box-shadow: rgba(134, 134, 134, 0.5) 0 0 3px;
+	cursor: pointer;
+}

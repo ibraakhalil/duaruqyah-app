@@ -2,7 +2,7 @@
 
 const loading = () => {
     return (
-        <div className='h-[calc(100vh-110px)] w-full pr-2'>
+        <div className='h-[calc(100vh-120px)] overflow-hidden w-full pr-2'>
             <div className="bg-white rounded-xl mb-4 p-5 w-full">
                 <p className="h-4 w-1/2 rounded-xl bg-icon-bg"></p>
             </div>
