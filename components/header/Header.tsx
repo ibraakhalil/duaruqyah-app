@@ -26,7 +26,7 @@ function Header() {
     return (
         <div className='flex justify-between mb-4 px-2' >
             <div className='flex justify-between items-center flex-grow'>
-                <h1 className='text-2xl'>{nameWithUrl[pathname] ?? pathname.includes('duas') ? "Duas Page" : "Page"}</h1>
+                <h1 className='text-2xl'>{nameWithUrl[pathname] ?? "Duas Page" }</h1>
                 <Search />
             </div>
             <div className='flex items-center' >

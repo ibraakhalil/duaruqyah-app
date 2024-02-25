@@ -14,7 +14,7 @@ const Sidebar = () => {
     const hidden = { "hidden": isPathName }
 
     return (
-        <aside className={cn("sidebar-thin overflow-y-auto h-[100%] min-w-[270px] max-2xl:min-w-[230px] p-4 rounded-l-3xl bg-white", { "min-w-[100px] max-2xl:min-w-[100px]": isPathName })}>
+        <aside className={cn("sidebar-thin overflow-y-auto h-[100%] min-w-[270px] max-2xl:min-w-[230px] p-4 rounded-3xl bg-white", { "min-w-[100px] max-2xl:min-w-[100px]": isPathName })}>
             <div className={cn("flex flex-col items-center p-4", { "px-0": isPathName })}>
                 <Link href='/'>
                     <Image src='/icons/dua-logo.svg' width='64' height='64' alt='logo' />
