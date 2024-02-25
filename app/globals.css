@@ -90,6 +90,9 @@
   .dua-player .rhap_current-left-time {
     @apply hidden;
   }
+  .dua-player .rhap_download-progress {
+    @apply hidden;
+  }
 
   .dua-player.play .rhap_current-left-time {
     @apply block text-gray-400 text-[14px];
