@@ -6,7 +6,7 @@
 	flex: 1 1 auto;
 }
 
-.ruqyah .rhap_container {
+.ruqyah.rhap_container {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -14,10 +14,11 @@
 	font-family: inherit;
 	width: 100%;
 	padding: 10px 15px;
-    background: transparent;
+	background-color: transparent;
+	box-shadow: none;
 }
 
-.ruqyah .rhap_container svg {
+.ruqyah.rhap_container svg {
 	vertical-align: initial;
 	color: white;
 }

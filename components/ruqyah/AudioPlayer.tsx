@@ -24,7 +24,7 @@ const AudioPlayer = () => {
                     onPause={() => setPlay(false)}
                 />
             </div>
-            <div className='flex-grow text-white'>
+            <div className='flex-grow text-white pl-4'>
                 <h3 className=' py-2 mb-3'>Playlist</h3>
                 <div className='flex flex-col gap-2'>
                     <p>Brief Ruqyah</p>
