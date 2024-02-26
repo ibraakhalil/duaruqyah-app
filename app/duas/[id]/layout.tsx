@@ -1,6 +1,6 @@
 import React from "react";
 import CategorySidebar from '@/components/duas/Sidebar'
-import { getCategories, getDuas, getSubCategories } from "@/lib/getRequest";
+import { getCategories, getDuaNames, getDuas, getSubCategories } from "@/lib/getRequest";
 
 interface DuasProps {
     children: React.ReactNode
@@ -9,7 +9,7 @@ interface DuasProps {
 const DuasLayout = async ({ children }: DuasProps) => {
     const categories = await getCategories()
     const subCategories = await getSubCategories()
-    const duas = await getDuas()
+    const duas = await getDuaNames()
     const data = { categories, subCategories, duas }
 
     return (
