@@ -6,12 +6,15 @@ import Image from "next/image";
 
 const General = ({ index, setIndex }: ElementProps) => {
     return (
-        <div onClick={() => setIndex(1)} className="rounded-lg border-x-[1px] border-b-[1px] overflow-hidden cursor-pointer">
-            <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary hover:border-l-[4px] hover:border-primary transition-all", { "border-primary": index == 1 })}>
-                <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
-                    <Image id="cat-img" className="" src='/icons/setting/general.svg' width={20} height={20} alt='Home' />
+        <div onClick={() => setIndex(1)} className={cn("rounded-lg border-x-[1px] overflow-hidden cursor-pointer", { "border-x-[1px] border-b-[1px]": index == 1 })}>
+
+            <div className="rounded-l-md overflow-hidden">
+                <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary hover:border-l-[4px] hover:border-primary transition-all", { "border-primary": index == 1 })}>
+                    <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
+                        <Image id="cat-img" className="" src='/icons/setting/general.svg' width={20} height={20} alt='Home' />
+                    </div>
+                    <h2 className={cn("text-gray-500 text-sm",{ "text-primary font-medium": index == 1 })}>General Settings</h2>
                 </div>
-                <h2 className="text-primary text-sm">General Settings</h2>
             </div>
             <div className={cn("hidden", { "block": index == 1 })}>
                 <div className="flex flex-col gap-y-1 py-2 px-4 rounded-b-lg">

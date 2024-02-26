@@ -29,7 +29,7 @@ const NavList = ({ isPathName }: { isPathName: boolean }) => {
     }
 
     return (
-        <ul className={cn({ "my-10 mb-12": isPathName })}>
+        <ul className={cn("navlist_responsive" ,{ "my-10 mb-12 max-xl:my-0 max-xl:mb-0": isPathName })}>
             {sidebarCatsData.map((category, i) => <li
                 onClick={handleClick}
                 key={i}
@@ -37,11 +37,11 @@ const NavList = ({ isPathName }: { isPathName: boolean }) => {
                 id='category'
                 className="my-2 rounded-lg overflow-hidden hover:scale-105 active:scale-95 transition-all"
             >
-                <Link href={`/${category.link}`} className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary", { "justify-center border-none bg-transparent": isPathName })}>
-                    <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
+                <Link href={`/${category.link}`} className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary max-xl:border-none max-xl:bg-transparent", { "justify-center border-none bg-transparent": isPathName })}>
+                    <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center ">
                         <Image id="cat-img" className="" src={`/icons/${category.icon}`} width={20} height={20} alt='Home' />
                     </div>
-                    <h2 className={cn("text-primary text-sm", { "hidden": isPathName })}>{category.name}</h2>
+                    <h2 className={cn("text-primary text-sm max-xl:hidden", { "hidden": isPathName })}>{category.name}</h2>
                 </Link>
             </li>)}
         </ul>

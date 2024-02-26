@@ -4,105 +4,134 @@
 
 
 * {
-  box-sizing: border-box !important;
+    box-sizing: border-box !important;
 }
 
 
 @layer base {
-  input {
-    outline: none !important;
-  }
+    input {
+        outline: none !important;
+    }
 }
 
 @layer components {
-  .sidebar-thin {
-    scrollbar-width: thin;
-  }
+    .sidebar-thin {
+        scrollbar-width: thin;
+    }
 
-  #category.active a {
-    @apply border-l-[4px] border-primary;
-  }
+    /* .sidebar-thin::-webkit-scrollbar {
+        width: 0.7vw;
+    }
 
-  .subcategory_dot {
-    @apply before:content-[''] before:absolute before:w-2 before:h-2 before:rounded-full before:bg-primary before:top-[9px] before:left-[-4.5px];
-  }
+    .sidebar-thin::-webkit-scrollbar-track {
+        background-color: #f6f6f6;
+        border-radius: 25px;
+        height: 95%;
+    }
 
-  .dua_list_style {
-    @apply mb-4 block pl-6 before:content-[url('/icons/duaarrow.svg')] before:absolute before:left-3
-  }
+    .sidebar-thin::-webkit-scrollbar-thumb {
+        background-color: #24d60080;
+        border-radius: 25px
+    } */
+
+    #category.active a {
+        @apply border-l-[4px] border-primary;
+    }
+
+    .subcategory_dot {
+        @apply before:content-[''] before:absolute before:w-2 before:h-2 before:rounded-full before:bg-primary before:top-[9px] before:left-[-4.5px];
+    }
+
+    .dua_list_style {
+        @apply mb-4 block pl-6 before:content-[url('/icons/duaarrow.svg')] before:absolute before:left-3
+    }
+
+    .sidebar_boxshadow {
+        box-shadow: 0px 0px 14px #00000061;
+    }
+
+    .sidebar_responsive {
+        @apply max-xl:w-[100%] max-xl:absolute max-xl:bottom-0 max-xl:left-0 max-xl:shadow;
+    }
+
+    .navlist_responsive {
+        @apply max-xl:flex max-xl:flex-row max-xl:justify-around max-xl:bg-transparent;
+    }
 
 }
 
 @layer utilities {
-  .dua-player {
-    background: transparent !important;
-    padding: 0 !important;
-    box-shadow: unset !important;
-  }
+    .dua-player {
+        background: transparent !important;
+        padding: 0 !important;
+        box-shadow: unset !important;
+    }
 
-  .dua-player :is(.rhap_forward-button, .rhap_rewind-button, .rhap_progress-section) {
-    @apply hidden;
-  }
+    .dua-player :is(.rhap_forward-button, .rhap_rewind-button, .rhap_progress-section) {
+        @apply hidden;
+    }
 
-  .dua-player * {
-    @apply m-0;
-  }
+    .dua-player * {
+        @apply m-0;
+    }
 
-  .dua-player .rhap_controls-section {
-    @apply flex m-0 items-center justify-start gap-4;
-  }
+    .dua-player .rhap_controls-section {
+        @apply flex m-0 items-center justify-start gap-4;
+    }
 
-  .dua-player .rhap_play-pause-button {
-    @apply h-11 w-11 rounded-full;
-  }
+    .dua-player .rhap_play-pause-button {
+        @apply h-11 w-11 rounded-full;
+    }
 
-  .dua-player .rhap_play-pause-button svg {
-    @apply h-11 w-11;
-  }
+    .dua-player .rhap_play-pause-button svg {
+        @apply h-11 w-11;
+    }
 
-  .dua-player .rhap_controls-section svg {
-    @apply text-primary;
-  }
+    .dua-player .rhap_controls-section svg {
+        @apply text-primary;
+    }
 
-  .dua-player .rhap-container {
-    @apply hidden;
-  }
- .dua-player .rhap_progress-container {
-    @apply hidden max-w-[auto] mr-3;
-  }
+    .dua-player .rhap-container {
+        @apply hidden;
+    }
 
-  .dua-player.play .rhap_progress-container {
-    @apply flex;
-  }
+    .dua-player .rhap_progress-container {
+        @apply hidden max-w-[auto] mr-3;
+    }
 
-  .dua-player .rhap_progress-indicator {
-    @apply -top-[5px] -ml-1 h-4 w-4 bg-primary shadow-none absolute rounded-full z-10;
-  }
+    .dua-player.play .rhap_progress-container {
+        @apply flex;
+    }
 
-  .dua-player .rhap_progress-filled {
-    @apply bg-primary h-1.5 w-[200px] rounded-lg relative;
-  }
+    .dua-player .rhap_progress-indicator {
+        @apply -top-[5px] -ml-1 h-4 w-4 bg-primary shadow-none absolute rounded-full z-10;
+    }
 
-  .dua-player .rhap_progress-bar {
-    @apply h-1.5 w-[200px] rounded-lg relative bg-gray-300;
-  }
+    .dua-player .rhap_progress-filled {
+        @apply bg-primary h-1.5 w-[200px] rounded-lg relative;
+    }
 
-  .dua-player .rhap_current-left-time {
-    @apply hidden;
-  }
-  .dua-player .rhap_download-progress {
-    @apply hidden;
-  }
+    .dua-player .rhap_progress-bar {
+        @apply h-1.5 w-[200px] rounded-lg relative bg-gray-300;
+    }
 
-  .dua-player.play .rhap_current-left-time {
-    @apply block text-gray-400 text-[14px];
-  }
+    .dua-player .rhap_current-left-time {
+        @apply hidden;
+    }
 
-  .dua-player-sm :is(.rhap_progress-container, .rhap_current-left-time) {
-    @apply hidden;
-  }
+    .dua-player .rhap_download-progress {
+        @apply hidden;
+    }
 
-  .dua-player-sm .rhap_controls-section {
-    @apply gap-2;
-  }
+    .dua-player.play .rhap_current-left-time {
+        @apply block text-gray-400 text-[14px];
+    }
+
+    .dua-player-sm :is(.rhap_progress-container, .rhap_current-left-time) {
+        @apply hidden;
+    }
+
+    .dua-player-sm .rhap_controls-section {
+        @apply gap-2;
+    }
 }

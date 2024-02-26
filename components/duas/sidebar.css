@@ -1,0 +1,48 @@
+.sidebar {
+    min-width: 350px;
+    max-width: 350px;
+    height: calc(100vh - 110px);
+}
+
+.sidebar .search {
+    margin: 1rem;
+    margin-bottom: 0;
+}
+
+.sidebar .category:hover {
+    background: #ebeef2;
+}
+
+.wrapper {
+    height: calc(100vh - 230px);
+    padding-top: 1rem;
+}
+
+.sidebar ul.subcat_wrapper {
+    border-left: 2px #cacaca dotted;
+    margin-left: 1rem;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+    }
+    .sidebar_bg {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background: #00000040;
+        left: 0;
+        top: 0;
+    }
+
+    .wrapper {
+        height: calc(100vh - 200px);
+    }
+
+}

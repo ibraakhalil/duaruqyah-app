@@ -5,17 +5,27 @@ import Image from "next/image";
 
 const Appearance = ({ index, setIndex }: ElementProps) => {
     return (
-        <div onClick={() => setIndex(3)} className="rounded-lg overflow-hidden cursor-pointer border-x-[1px] border-b-[1px]">
-            <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary hover:border-l-[4px] hover:border-primary transition-all", { "border-primary": index == 3 })}>
-                <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
-                    <Image id="cat-img" className="" src='/icons/setting/font.svg' width={20} height={20} alt='Home' />
+        <div onClick={() => setIndex(3)} className={cn("rounded-lg overflow-hidden cursor-pointer", { "border-x-[1px] border-b-[1px]": index == 3 })}>
+            <div className="rounded-l-md overflow-hidden">
+                <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary hover:border-l-[4px] hover:border-primary transition-all", { "border-primary": index == 3 })}>
+                    <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
+                        <Image id="cat-img" className="" src='/icons/setting/font.svg' width={20} height={20} alt='Home' />
+                    </div>
+                    <h2 className={cn("text-gray-500 text-sm", { "text-primary font-medium": index == 3 })}>Appearance Settings</h2>
                 </div>
-                <h2 className="text-primary text-sm">Appearance Settings</h2>
             </div>
+
             <div className={cn("hidden", { "block": index == 3 })}>
-                <div className="px-4 pb-1 rounded-b-lg"><div className=" flex flex-row justify-between"><p className="mt-7 mb-4 text-title text-sm dark:text-dark-text">Night Mode</p><div className="mt-7 mb-4"><button className="bg-primary
-          relative inline-flex h-5 w-10 z-[1] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75" id="headlessui-switch-:r1:" role="switch" type="button" aria-checked="true" data-headlessui-state="checked"><span className="sr-only">Use setting</span><span aria-hidden="true" className="translate-x-5
-            pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out"></span></button></div></div></div>
+                <div className="px-4 rounded-b-lg">
+                    <div className="h-[70px] flex items-center justify-between">
+                        <p className="text-sm dark:text-dark-text">Night Mode</p>
+
+                        <label className="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" value="" className="sr-only peer outline-none" />
+                            <div className="relative w-11 h-6 bg-gray-200  rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
     );

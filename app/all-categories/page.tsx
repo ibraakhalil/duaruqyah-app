@@ -9,7 +9,7 @@ const page = async () => {
     categories.push(...categories, ...categories)
 
     return (
-        <div className="grid grid-cols-3 gap-4 gap-x-8 mt-4">
+        <div className="grid grid-cols-3 gap-4 gap-x-8 mt-4 max-lg:grid-cols-2">
             {categories?.map((category: any, i: number) => <Fragment key={i}>
                 <Link href={`/duas/${category.cat_id}`}><CategoryCard className="bg-white" category={category} /></Link>
             </Fragment>)}

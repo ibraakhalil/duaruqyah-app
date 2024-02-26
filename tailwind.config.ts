@@ -1,10 +1,10 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
@@ -14,9 +14,9 @@ const config: Config = {
         "secondary": "#f7f8fa",
         "icon-bg": "#e8f0f5"
       },
-      backgroundImage: {},
     },
   },
   plugins: [],
-};
-export default config;
+}
+
+export default config

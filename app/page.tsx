@@ -11,9 +11,9 @@ export default async function Home() {
   const categories = await getCategories()
 
   return (
-    <main className="px-2">
+    <main className="">
       <Swiper className="bg-primary" />
-      <div className="grid grid-cols-3 gap-4 gap-x-8 mt-8">
+      <div className="grid grid-cols-3 gap-4 gap-x-8 mt-8 max-md:bg-white max-md:rounded-3xl max-md:p-4 max-md:gap-2">
         <Link href='/comingsoon'><HomeCard name={"Last Read"} icon={'lastread'} /></Link>
         <Link href='/comingsoon'><HomeCard name={"Blogs"} icon={'blog'} /></Link>
         <Link href='/ruqyah'><HomeCard name={"Ruqyah"} icon={'ruqyah'} /></Link>
@@ -22,8 +22,8 @@ export default async function Home() {
         <Link href='/comingsoon'><HomeCard name={"Dua Audio"} icon={'audio'} /></Link>
       </div>
       <div className="mt-8">
-        <h2 className="text-lg font-medium">Categories of Dua</h2>
-        <div className="grid grid-cols-3 gap-4 gap-x-8 mt-4">
+        <h2 className="text-lg font-medium max-md:hidden">Categories of Dua</h2>
+        <div className="grid grid-cols-3 gap-4 gap-x-8 mt-4 max-lg:grid-cols-2 max-md:grid-cols-1">
           {categories.slice(0, 8).map((category: any, i: number) => <Fragment key={i}>
             <Link href={`/duas/${category.cat_id}`}>
               <CategoryCard className="bg-white" category={category} />

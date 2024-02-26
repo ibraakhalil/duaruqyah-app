@@ -1,7 +1,7 @@
 import Action from '@/components/duas/Action'
+import ShowBtn from '@/components/duas/ShowBtn'
 import { getCategories, getDuas, getSubCategories } from '@/lib/getRequest'
 import Image from 'next/image'
-
 
 export async function generateStaticParams() {
     const categories = await getCategories()
@@ -17,6 +17,7 @@ async function page({ params }: { params: any }) {
 
     return (
         <div className='sidebar-thin content-wrapper scroll-smooth  h-[calc(100vh-110px)] overflow-y-auto pr-2'>
+            <ShowBtn />
             {subCategories?.filter((item: any) => item.cat_id == id)?.map((subCat: any, i: any) => <div key={i}>
                 <div id={`sub_cat_${subCat.subcat_id}`} className="subcategory-name bg-white rounded-xl mb-4 p-4 font-medium">
                     <p><span className='text-primary'>Section:</span> {subCat.subcat_name_en}</p>
@@ -48,7 +49,7 @@ async function page({ params }: { params: any }) {
                             <p className='text-primary'>Reference:</p>
                             <p>{item.refference_en}</p>
                         </div>}
-                        <Action src={item.audio}/>
+                        <Action src={item.audio} id={item.dua_id} />
                     </div>)}
                 </div>
             </div>)}

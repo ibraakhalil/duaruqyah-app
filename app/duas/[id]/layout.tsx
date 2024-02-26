@@ -1,5 +1,5 @@
 import React from "react";
-import CategorySidebar from '@/components/duas/Sidebar'
+import CategorySidebar from '@/components/duas/Sidebar';
 import { getCategories, getDuaNames, getDuas, getSubCategories } from "@/lib/getRequest";
 
 interface DuasProps {
