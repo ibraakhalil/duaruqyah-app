@@ -10,7 +10,7 @@ const PlayerAnimation = ({ play }: { play: boolean }) => {
     })
 
     return (
-        <div className="playing">
+        <div className="playing max-md:mb-10">
             {span}
         </div>
     );

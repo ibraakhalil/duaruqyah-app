@@ -7,8 +7,8 @@ import { ElementProps } from "@/types/settings";
 
 const Language = ({ index, setIndex }: ElementProps) => {
     return (
-        <div onClick={() => setIndex(0)} className={cn("rounded-lg overflow-hidden cursor-pointer", { "border-x-[1px] border-b-[1px]": index == 0 })}>
-            <div className="rounded-l-md overflow-hidden">
+        <div className={cn("rounded-lg overflow-hidden cursor-pointer", { "border-x-[1px] border-b-[1px]": index == 0 })}>
+            <div onClick={() => setIndex(index == 0 ? null : 0)} className="rounded-l-md overflow-hidden">
                 <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary hover:border-l-[4px] hover:border-primary transition-all", { "border-primary text-primary": index == 0 })}>
                     <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
                         <Image id="cat-img" className="" src='/icons/setting/language.svg' width={20} height={20} alt='Home' />

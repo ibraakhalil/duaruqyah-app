@@ -1,3 +1,4 @@
+'use client'
 import { ElementProps } from "@/types/settings";
 import cn from "@/utils/cn";
 import Image from "next/image";
@@ -5,8 +6,8 @@ import Image from "next/image";
 
 const Appearance = ({ index, setIndex }: ElementProps) => {
     return (
-        <div onClick={() => setIndex(3)} className={cn("rounded-lg overflow-hidden cursor-pointer", { "border-x-[1px] border-b-[1px]": index == 3 })}>
-            <div className="rounded-l-md overflow-hidden">
+        <div className={cn("rounded-lg overflow-hidden cursor-pointer", { "border-x-[1px] border-b-[1px]": index == 3 })}>
+            <div onClick={() => setIndex(index == 3 ? null : 3)} className="rounded-l-md overflow-hidden">
                 <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary hover:border-l-[4px] hover:border-primary transition-all", { "border-primary": index == 3 })}>
                     <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
                         <Image id="cat-img" className="" src='/icons/setting/font.svg' width={20} height={20} alt='Home' />

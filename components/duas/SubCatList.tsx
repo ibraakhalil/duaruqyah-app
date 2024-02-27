@@ -13,9 +13,9 @@ const SubCatList = ({ catId, data }: SubcatProps) => {
 
     return (
         <>
-            {data.subCategories?.filter((item: any) => item.cat_id == catId).map((subCategory: any, i: any) => <div key={i} className="pl-3 mb-3 relative subcategory_dot">
+            {data.subCategories?.filter((item: any) => item.cat_id == catId).map((subCategory: any, i: any) => <div key={i} className="pl-4 mb-5 relative subcategory_dot">
                 <Link
-                    className={cn("font-medium", { "text-primary": subCatIndex == i })}
+                    className={cn("font-semibold text-[14px] text-gray-700", { "text-primary": subCatIndex == i })}
                     onClick={() => setSubCatIndex(i)}
                     href={`#sub_cat_${subCategory.subcat_id}`}>
                     {subCategory.subcat_name_en}

@@ -1,12 +1,12 @@
 
 
-.ruqyah .rhap_main {
+#ruqyah .rhap_main {
 	display: flex;
 	flex-direction: column;
 	flex: 1 1 auto;
 }
 
-.ruqyah.rhap_container {
+#ruqyah .rhap_container {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -18,12 +18,12 @@
 	box-shadow: none;
 }
 
-.ruqyah.rhap_container svg {
+#ruqyah .rhap_container svg {
 	vertical-align: initial;
 	color: white;
 }
 
-.ruqyah .rhap_time {
+#ruqyah .rhap_time {
 	color: #fff;
 	font-size: 16px;
 	-moz-user-select: none;
@@ -31,7 +31,7 @@
 	-webkit-user-select: none;
 }
 
-.ruqyah .rhap_progress-indicator {
+#ruqyah .rhap_progress-indicator {
 	box-sizing: border-box;
 	position: absolute;
 	z-index: 3;
@@ -43,7 +43,7 @@
 	border-radius: 50px;
 	box-shadow: rgba(134, 134, 134, 0.5) 0 0 5px;
 }
-.ruqyah .rhap_volume-indicator {
+#ruqyah .rhap_volume-indicator {
 	box-sizing: border-box;
 	position: absolute;
 	width: 12px;
