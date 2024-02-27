@@ -3,15 +3,19 @@ import React, { useState } from 'react'
 import Search from './Search'
 import Image from 'next/image'
 import { MdArrowDropDown } from "react-icons/md";
+import { IoIosArrowBack } from "react-icons/io";
 import HeaderModal from './HeaderModal';
 import { usePathname } from 'next/navigation';
 import { nameWithUrl } from '@/constants/constants';
 import Link from 'next/link';
+import cn from '@/utils/cn';
 
 
 function Header() {
     const [modalShow, setModalShow] = useState(false)
     const pathname: string = usePathname()
+
+    console.log(pathname)
 
     const handleModalShow = (e: any) => {
         setModalShow(!modalShow)
@@ -25,20 +29,22 @@ function Header() {
 
 
     return (
-        <div className='flex justify-between mb-4 px-5 max-xl:bg-white max-xl:absolute max-xl:top-0 max-xl:left-0 max-xl:w-full max-xl:p-4 max-xl:px-6' >
+        <div className={cn('flex justify-between mb-4 px-5 max-xl:bg-white max-xl:absolute max-xl:top-0 max-xl:left-0 max-xl:w-full max-xl:p-4 max-xl:px-6 max-md:bg-transparent max-md:relative max-md:pt-0 max-md:mb-0', { 'max-md:hidden': pathname == '/' })}>
             <div className='flex justify-between items-center flex-grow max-xl:pr-6'>
-                <div className='hidden items-center gap-3 max-xl:flex'>
+                <div className='hidden items-center gap-3 max-xl:flex max-md:hidden' >
                     <Link href='/'>
                         <Image src='/icons/dua-logo.svg' width='50' height='50' alt='logo' />
                     </Link>
-
                     <h1 className='font-medium text-[20px]'>Dua & Ruqyah</h1>
                 </div>
-                <h1 className='text-2xl max-xl:hidden'>{nameWithUrl[pathname] ?? "Duas Page"}</h1>
+                <h1 className='text-2xl max-xl:hidden max-md:flex max-md:items-center max-md:text-xl max-md:pt-2'>
+                    <Link href='/' className='hidden max-md:inline max-md:mr-3'><IoIosArrowBack /></Link>
+                    {nameWithUrl[pathname] ?? "Duas Page"}
+                </h1>
                 <Search />
             </div>
             <div className='flex items-center max-xl:flex-row-reverse max-xl:gap-4' >
-                <div onClick={handleModalShow} className='relative flex items-center gap-1 w-[200px] justify-end max-xl:w-auto'>
+                <div onClick={handleModalShow} className='relative flex items-center gap-1 w-[200px] justify-end max-xl:w-auto max-md:hidden'>
                     <div className='cursor-pointer'>
                         <Image src='/icons/profile.svg' width='45' height='45' alt='profile' />
                     </div>

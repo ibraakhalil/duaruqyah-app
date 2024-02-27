@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { FaTimes } from "react-icons/fa";
 import SubCatList from "./SubCatList";
 import cn from "@/utils/cn";
 import Link from "next/link";
@@ -11,7 +12,7 @@ import CategoryCard from "../category/CategoryCard";
 
 export default function CategorySidebar({ data }) {
     const [filtCategories, setFiltCategories] = useState(data.categories)
-    const { id }= useParams()
+    const { id } = useParams()
 
     useEffect(() => {
         const target = document.querySelector(`#cat_${id}`)
@@ -41,7 +42,12 @@ export default function CategorySidebar({ data }) {
         <>
             <div onClick={hideSidebar} className="sidebar_bg hidden"></div>
             <div id="duas_sidebar" className="sidebar h-[calc(100vh-110px)] rounded-xl overflow-hidden bg-white max-lg:rounded-l-none">
-                <h3 className="bg-primary text-white p-4 text-center">Categories</h3>
+                <h3 className="bg-primary text-white p-4 text-center">
+                    Categories
+                    <div className="hidden max-sm:block" onClick={hideSidebar}>
+                        <FaTimes />
+                    </div>
+                </h3>
                 <div className="search flex items-center p-3 border bg-white rounded-md m-3 gap-2 ">
                     <CiSearch />
                     <input onChange={handleSearch} className="outline-none text-[14px]" type="text" placeholder="Search by categories" />

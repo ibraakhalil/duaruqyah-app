@@ -1,5 +1,6 @@
 import cn from "@/utils/cn";
 
+
 type ButtonProps = {
     className: string
 }
@@ -12,6 +13,7 @@ const Swiper = ({ className }: ButtonProps) => {
                 [Bukhari: 3293]</p>
         </div>
     );
+
 }
 
 export default Swiper;

@@ -29,16 +29,16 @@ const NavList = ({ isPathName }: { isPathName: boolean }) => {
     }
 
     return (
-        <ul className={cn("navlist_responsive" ,{ "my-10 mb-12 max-xl:my-0 max-xl:mb-0": isPathName })}>
+        <ul className={cn("navlist_responsive", { "my-10 mb-12 max-xl:my-0 max-xl:mb-0": isPathName })}>
             {sidebarCatsData.map((category, i) => <li
                 onClick={handleClick}
                 key={i}
                 data-index={i}
                 id='category'
-                className="my-2 rounded-lg overflow-hidden hover:scale-105 active:scale-95 transition-all"
+                className={cn("my-2 rounded-lg overflow-hidden hover:scale-105 active:scale-95 transition-all", { "max-md:hidden": category.link == 'dua-info' || category.link == 'books' })}
             >
-                <Link href={`/${category.link}`} className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary max-xl:border-none max-xl:bg-transparent", { "justify-center border-none bg-transparent": isPathName })}>
-                    <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center ">
+                <Link href={`/${category.link}`} className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary max-xl:border-none max-xl:bg-transparent max-md:py-1 max-md:pb-2", { "justify-center border-none bg-transparent": isPathName })}>
+                    <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center max-md:bg-transparent">
                         <Image id="cat-img" className="" src={`/icons/${category.icon}`} width={20} height={20} alt='Home' />
                     </div>
                     <h2 className={cn("text-primary text-sm max-xl:hidden", { "hidden": isPathName })}>{category.name}</h2>

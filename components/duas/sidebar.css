@@ -30,8 +30,13 @@
         top: 0;
         left: 0;
         height: 100vh;
+        min-width: 400px;
         transform: translateX(-100%);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        transition: all 0.3s;
     }
+
     .sidebar_bg {
         position: absolute;
         width: 100vw;
@@ -44,5 +49,20 @@
     .wrapper {
         height: calc(100vh - 200px);
     }
+}
 
+@media screen and (max-width: 640px) {
+    .sidebar {
+        min-width: 100%;
+        border-radius: 0;
+    }
+    .sidebar > h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+    }
+    .sidebar > h3 div {
+        display: block;
+    }
 }
