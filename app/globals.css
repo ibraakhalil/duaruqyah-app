@@ -15,11 +15,11 @@
 }
 
 @layer components {
-    .sidebar-thin {
+    /* .sidebar-thin {
         scrollbar-width: thin;
-    }
+    } */
 
-    /* .sidebar-thin::-webkit-scrollbar {
+    .sidebar-thin::-webkit-scrollbar {
         width: 0.7vw;
     }
 
@@ -27,12 +27,13 @@
         background-color: #f6f6f6;
         border-radius: 25px;
         height: 95%;
+        margin-block: 7px;
     }
 
     .sidebar-thin::-webkit-scrollbar-thumb {
-        background-color: #24d60080;
-        border-radius: 25px
-    } */
+        background-color: #c7c7c780;
+        border-radius: 25px;
+    }
 
     #category.active a {
         @apply border-l-[4px] border-primary;
