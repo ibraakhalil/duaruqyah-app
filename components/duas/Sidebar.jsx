@@ -21,7 +21,7 @@ export default function CategorySidebar({ data }) {
             block: "start",
             inline: "nearest"
         });
-    }, [])
+    }, [id])
 
 
     const handleSearch = (e) => {

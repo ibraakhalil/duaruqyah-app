@@ -39,7 +39,7 @@
     }
 
     .subcategory_dot {
-        @apply before:content-[''] before:absolute before:w-2 before:h-2 before:rounded-full before:bg-primary before:top-[9px] before:left-[-4.5px];
+        @apply before:content-[''] before:absolute before:w-2 before:h-2 before:rounded-full before:bg-primary before:top-[9px] before:left-[-5px];
     }
 
     .dua_list_style {

@@ -42,7 +42,7 @@ const page = async ({ params }: { params: any }) => {
                     <p className='text-primary'>Reference:</p>
                     <p>{item.refference_en}</p>
                 </div>}
-                <Action src={item.audio} />
+                <Action src={item.audio} id={id}/>
             </div>
         </div>
     );
