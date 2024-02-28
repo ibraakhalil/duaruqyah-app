@@ -9,7 +9,7 @@ const TextSlider = () => {
         Autoplay({ delay: 4000, stopOnInteraction: true })
     )
     return (
-        <Carousel plugins={[plugin.current]} className='w-full'>
+        <Carousel plugins={[plugin.current]} className='w-full max-sm:-mt-6'>
             <CarouselContent className='text-center'>
                 <CarouselItem>
                     <p className="w-[85%] mx-auto text-center text-white">None has the right to be worshipped except Allah, He is alone, without any partner, to Him belong all sovereignty and praise... <br /><br />
