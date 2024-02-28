@@ -19,8 +19,8 @@ export default async function Home() {
         <h1 className="text-xl font-semibold">HomePage</h1>
         <div><IoIosSearch /></div>
       </div>
-      <Swiper className="bg-primary max-md:w-screen max-md:rounded-t-none max-md:h-[55vh]  max-md:-z-10 max-md:items-start max-md:pt-28" />
-      <div className="grid grid-cols-3 gap-4 gap-x-8 mt-8 max-md:bg-white max-md:rounded-3xl max-md:p-4 max-md:gap-2 max-md:mx-6 max-md:-mt-[12rem] max-sm:-mt-[10rem] max-sm:mx-2 max-sm:px-0">
+      <Swiper className="bg-primary max-md:w-screen max-md:rounded-t-none max-md:h-[55vh]  max-md:-z-[1] max-md:items-start max-md:pt-28 max-sm:h-[60vh]" />
+      <div className="grid grid-cols-3 gap-4 gap-x-8 mt-8 max-md:bg-white max-md:rounded-3xl max-md:p-4 max-md:gap-2 max-md:mx-6 max-md:-mt-[12rem] max-md:z-20 max-sm:-mt-[10rem] max-sm:mx-2 max-sm:px-0 max-sm:text-[14px]">
         <Link href='/comingsoon'><HomeCard name={"Last Read"} icon={'lastread'} /></Link>
         <Link href='/comingsoon'><HomeCard name={"Blogs"} icon={'blog'} /></Link>
         <Link href='/ruqyah'><HomeCard name={"Ruqyah"} icon={'ruqyah'} /></Link>

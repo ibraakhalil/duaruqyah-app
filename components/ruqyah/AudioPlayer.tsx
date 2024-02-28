@@ -10,7 +10,7 @@ const AudioPlayer = () => {
     const [play, setPlay] = useState(false)
 
     return (
-        <div id='ruqyah' className={cn('flex p-6 px-8 bg-[url("/images/ruqyahPlayer.jpg")] bg-no-repeat bg-cover bg-center rounded-[36px] gap-8 max-md:bg-[url("/images/ruqyahMobile.png")]',)}>
+        <div id='ruqyah' className={cn('flex p-6 px-8 bg-[url("/images/ruqyahPlayer.jpg")] bg-no-repeat bg-cover bg-center rounded-[36px] gap-8 max-md:bg-[url("/images/ruqyahMobile.png")] max-sm:pb-2 max-sm:px-6')}>
             <div className='flex-grow'>
                 <div>
                     <p className='text-white mb-4'>Brief Ruqyah</p>

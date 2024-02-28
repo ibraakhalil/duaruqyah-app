@@ -1,10 +1,9 @@
 "use client";
-
-import { useState } from "react";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
+import './duaPlayer.css'
+type PlayerProps = { play: boolean, setPlay: any, src: string }
 
-export function PLayer({ src }: { src: string }) {
-  const [play, setPlay] = useState(false)
+export function PLayer({ play, setPlay, src }: PlayerProps) {
 
   const handlePlay = (e: any) => {
     setPlay(true)
@@ -21,7 +20,7 @@ export function PLayer({ src }: { src: string }) {
       onPlay={handlePlay}
       onPause={handlePause}
       className={`dua-player max-sm:dua-player-sm ${play ? 'play' : null}`}
-      customControlsSection={[RHAP_UI.MAIN_CONTROLS, RHAP_UI.PROGRESS_BAR, RHAP_UI.CURRENT_LEFT_TIME]}
+      customControlsSection={[RHAP_UI.MAIN_CONTROLS, RHAP_UI.PROGRESS_BAR, RHAP_UI.CURRENT_LEFT_TIME, RHAP_UI.LOOP]}
       layout="horizontal"
     />
   );

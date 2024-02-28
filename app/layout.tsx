@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html suppressHydrationWarning={true} className="bg-bg" lang="en">
       <body className={inter.className}>
-        <div className="relative h-[100vh] p-[1.5rem] px-[2.5rem] max-2xl:px-[1.5rem] flex gap-6 max-2xl:gap-2 max-md:px-1">
+        <div className="relative h-[100vh] p-[1.5rem] px-[2.5rem] max-2xl:px-[1.5rem] flex gap-6 max-2xl:gap-2 max-md:px-1 max-sm:pt-4">
           <Sidebar />
           <div className="flex-grow">
             <Header />

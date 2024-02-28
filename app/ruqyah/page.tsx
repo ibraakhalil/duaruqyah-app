@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Ruqyah = () => {
-    const array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    const array = new Array(8).fill('ruqyah')
     return (
         <div className="h-full ">
             <AudioPlayer />
