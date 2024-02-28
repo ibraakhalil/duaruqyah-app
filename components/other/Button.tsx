@@ -3,7 +3,7 @@ import cn from "@/utils/cn";
 
 type ButtonProps = {
     text: string,
-    className: string
+    className: string,
 }
 
 const Button = ({ text, className, ...restProps }: ButtonProps) => {
