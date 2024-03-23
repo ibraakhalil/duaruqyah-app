@@ -14,7 +14,7 @@ const Sidebar = () => {
     const hidden = { "hidden": isPathName }
 
     return (
-        <aside className={cn("sidebar_responsive sidebar-thin overflow-y-auto min-w-[270px] max-2xl:min-w-[238px]  p-4 rounded-3xl bg-white z-10 max-xl:p-2 max-xl:rounded-b-none max-xl:h-auto max-xl:sidebar_boxshadow max-md:rounded-t-[35px] max-md:fixed max-md:py-0", { "min-w-[100px] max-2xl:min-w-[100px]": isPathName })}>
+        <aside className={cn("sidebar_responsive sidebar-thin overflow-y-auto min-w-[270px] max-2xl:min-w-[238px]  p-4 rounded-3xl bg-bg2 z-10 max-xl:p-2 max-xl:rounded-b-none max-xl:h-auto max-xl:sidebar_boxshadow max-md:rounded-t-[35px] max-md:fixed max-md:py-0", { "min-w-[100px] max-2xl:min-w-[100px]": isPathName })}>
             <div className={cn("flex flex-col items-center p-4 max-xl:hidden", { "px-0": isPathName })}>
                 <Link href='/'>
                     <Image src='/icons/dua-logo.svg' width='64' height='64' alt='logo' />

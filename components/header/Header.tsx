@@ -15,8 +15,6 @@ function Header() {
     const [modalShow, setModalShow] = useState(false)
     const pathname: string = usePathname()
 
-    console.log(pathname)
-
     const handleModalShow = (e: any) => {
         setModalShow(!modalShow)
     }
@@ -29,15 +27,15 @@ function Header() {
 
 
     return (
-        <div className={cn('flex justify-between mb-4 px-5 max-xl:bg-white max-xl:absolute max-xl:top-0 max-xl:left-0 max-xl:w-full max-xl:p-4 max-xl:px-6 max-md:bg-transparent max-md:relative max-md:pt-0 max-md:mb-0 max-md:px-4', { 'max-md:hidden': pathname == '/' })}>
+        <div className={cn('flex justify-between mb-4 px-5 max-xl:bg-bg2 max-xl:absolute max-xl:top-0 max-xl:left-0 max-xl:w-full max-xl:p-4 max-xl:px-6 max-md:bg-transparent max-md:relative max-md:pt-0 max-md:mb-0 max-md:px-4', { 'max-md:hidden': pathname == '/' })}>
             <div className='flex justify-between items-center flex-grow max-xl:pr-6'>
                 <div className='hidden items-center gap-3 max-xl:flex max-md:hidden' >
                     <Link href='/'>
                         <Image src='/icons/dua-logo.svg' width='50' height='50' alt='logo' />
                     </Link>
-                    <h1 className='font-medium text-[20px]'>Dua & Ruqyah</h1>
+                    <h1 className='font-medium text-[20px] text-accent-1'>Dua & Ruqyah</h1>
                 </div>
-                <h1 className='text-2xl text-gray-700 max-xl:hidden max-md:flex max-md:items-center max-md:text-xl max-md:pt-2 max-sm:text-lg'>
+                <h1 className='text-2xl text-accent-1 max-xl:hidden max-md:flex max-md:items-center max-md:text-xl max-md:pt-2 max-sm:text-lg'>
                     <Link href='/' className='hidden max-md:inline max-md:mr-3 text-[24px] '><IoIosArrowBack /></Link>
                     {nameWithUrl[pathname] ?? "Duas Page"}
                 </h1>

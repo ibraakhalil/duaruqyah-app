@@ -38,3 +38,6 @@ const AudioPlayer = () => {
 }
 
 export default AudioPlayer;
+
+
+<AudioPlayer />

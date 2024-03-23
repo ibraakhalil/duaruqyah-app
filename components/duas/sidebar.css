@@ -7,6 +7,10 @@
 .sidebar .search {
     margin: 1rem;
     margin-bottom: 0;
+    border: none;
+}
+.sidebar .search input {
+    border: none;
 }
 
 .sidebar .category:hover {

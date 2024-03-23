@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 async function page({ params }: { params: any }) {
     const { id } = params
     const subCategories = await getSubCategories()
-    const duas = await getDuas()
+    const duas = await getDuas(id)
 
     return (
         <div className='sidebar-thin content-wrapper scroll-smooth  h-[calc(100vh-110px)] overflow-y-auto pr-2'>
@@ -23,12 +23,12 @@ async function page({ params }: { params: any }) {
                     <p><span className='text-primary'>Section:</span> {subCat.subcat_name_en}</p>
                 </div>
                 <div className="items">
-                    {duas?.filter((x: any) => x.subcat_id === subCat.subcat_id)?.map((item: any, i: number) => <div id={`dua_${item.dua_id}`} key={i} className='item bg-white mb-4 rounded-xl p-6'>
+                    {duas?.map((item: any, i: number) => <div id={`dua_${item.dua_id}`} key={i} className='item bg-bg2 mb-4 rounded-xl p-6'>
                         <div className="header flex items-center gap-4 text-primary font-medium">
                             <Image src={'/icons/duacard.svg'} width={40} height={40} alt='img' />
                             <p className='font-semibold'>{item.dua_id}. {item.dua_name_en}  </p>
                         </div>
-                        <div className="body text-lg py-5 font-medium">
+                        <div className="body text-lg py-5 font-medium text-accent-1">
                             {item.top_en && <p>
                                 {item.top_en}
                             </p>}
@@ -45,7 +45,7 @@ async function page({ params }: { params: any }) {
                                 {item.bottom_en}
                             </p>}
                         </div>
-                        {item.refference_en && <div className="reference text-lg font-medium">
+                        {item.refference_en && <div className="reference text-lg font-medium text-accent-1">
                             <p className='text-primary'>Reference:</p>
                             <p>{item.refference_en}</p>
                         </div>}

@@ -6,7 +6,8 @@ import Link from "next/link";
 
 const page = async () => {
     const duaNames = await getDuaNames()
-    const wordsArray = [...new Set(duaNames.map((item: any) => item?.dua_name_en?.charAt(0)))].filter(item => item != undefined)
+    const wordsArray = [...new Set(duaNames.map((item: any) => item?.dua_name_en?.charAt(0)))].filter(Boolean)
+
 
     return (
         <div className="w-full mt-4">

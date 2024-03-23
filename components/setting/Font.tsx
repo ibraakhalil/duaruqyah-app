@@ -14,7 +14,7 @@ const Font = ({ index, setIndex }: ElementProps) => {
     return (
         <div className={cn("rounded-lg overflow-hidden cursor-pointer", { "border-x-[1px] border-b-[1px]": index == 2 })}>
             <div onClick={() => setIndex(index == 2 ? null : 2)} className="rounded-l-md overflow-hidden">
-                <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-secondary bg-secondary hover:border-l-[4px] hover:border-primary transition-all", { "border-primary": index == 2 })}>
+                <div className={cn("flex items-center gap-4 p-2 border-l-[4px] border-icon-bg bg-icon-bg hover:border-l-[4px] hover:border-primary transition-all", { "border-primary": index == 2 })}>
                     <div className="bg-icon-bg flex p-3 rounded-full items-center justify-center">
                         <Image id="cat-img" className="" src='/icons/setting/language.svg' width={20} height={20} alt='language' />
                     </div>
@@ -24,14 +24,14 @@ const Font = ({ index, setIndex }: ElementProps) => {
             <div className={cn("hidden", { "block": index == 2 })}>
                 <div className="px-4 pb-8 rounded-b-lg flex flex-col gap-3">
                     <div className="flex flex-col items-start">
-                        <p className="text-title mt-4 mb-3 text-sm dark:text-dark-text style-Kalpurush text-gray-700">Translation Font Size</p>
+                        <p className="text-title mt-4 mb-3 text-sm style-Kalpurush text-accent-1">Translation Font Size</p>
                         <div className="w-full mt-2 flex items-center gap-3">
                             <Slider onValueChange={(e) => setTranslation(e[0])} defaultValue={[14]} min={14} max={25} step={1} />
                             <span>{translation}</span>
                         </div>
                     </div>
                     <div className="flex flex-col items-start">
-                        <p className="text-title mt-4 mb-3 text-sm dark:text-dark-text style-Kalpurush text-gray-700">Select Arabic Script</p>
+                        <p className="text-title mt-4 mb-3 text-sm style-Kalpurush text-gray-700">Select Arabic Script</p>
                         <div className="w-full mt-1">
                             <Select defaultValue="uthmani">
                                 <SelectTrigger>
@@ -47,7 +47,7 @@ const Font = ({ index, setIndex }: ElementProps) => {
                         </div>
                     </div>
                     <div className="flex flex-col items-start">
-                        <p className="text-title mt-4 mb-3 text-sm dark:text-dark-text style-Kalpurush text-gray-700">Arabic Font</p>
+                        <p className="text-title mt-4 mb-3 text-sm style-Kalpurush text-accent-1">Arabic Font</p>
                         <div className="w-full mt-1">
                             <Select defaultValue="ird">
                                 <SelectTrigger>
@@ -65,7 +65,7 @@ const Font = ({ index, setIndex }: ElementProps) => {
                         </div>
                     </div>
                     <div className="flex flex-col items-start">
-                        <p className="text-title mt-4 mb-3 text-sm dark:text-dark-text style-Kalpurush text-gray-700">Arabic Font Size</p>
+                        <p className="text-title mt-4 mb-3 text-sm style-Kalpurush text-gray-700">Arabic Font Size</p>
                         <div className="w-full mt-2 flex items-center gap-3">
                             <Slider onValueChange={(e) => setArabic(e[0])} defaultValue={[18]} min={18} max={40} step={1} />
                             <span>{arabic}</span>

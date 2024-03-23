@@ -11,17 +11,17 @@ export const getSubCategories = async () => {
 }
 
 export const getDuaNames = async () => {
-    const duas = await fetch(`${API_URL}/duas`)
-    const res = await duas.json()
-    return res.map((item: any) => {
-        return {
-            dua_id: item.dua_id,
-            dua_name_en: item.dua_name_en,
-            subcat_id: item.subcat_id
-        }
-    })
+    const duaNames = await fetch(`${API_URL}/dua-names`)
+    return duaNames.json()
 }
-export const getDuas = async () => {
-    const duas = await fetch(`${API_URL}/duas`)
-    return duas.json()
+
+export const getDuas = async (cat_id: any) => {
+    const allDuas = await fetch(`${API_URL}/duas?cat_id=${cat_id}`)
+    return allDuas.json()
+}
+
+
+export const getSingleDua = async (dua_id: any) => {
+    const res = await fetch(`${API_URL}/dua/${dua_id}`)
+    return res.json()
 }

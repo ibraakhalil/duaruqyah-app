@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 
+@layer base {
+    :root {
+        --primary: #1fa45b;
+        --secondary: #f7f8fa;
+        --bg: #ebeef2;
+        --bg2: #fff;
+        --icon-bg: #e8f0f5;
+        --accent1: #393939;
+        --accent2: #000;
+    }
+
+    .dark {
+        --secondary: #1161ff;
+        --bg: #122337;
+        --bg2: #223449;
+        --icon-bg: #182c43;
+        --accent1: #e4e4e4;
+        --accent2: #000;
+    }
+}
+
+
 * {
     box-sizing: border-box !important;
 }
@@ -24,6 +46,7 @@
     border: 2px solid transparent;
     background-clip: content-box;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background-color: #a8a8a880 !important;
 }

@@ -1,5 +1,6 @@
 // You can get "categories", "sub_categories", "duas"  using this API
-export const API_URL = 'https://task-dua-app.vercel.app'
+// export const API_URL = 'https://task-dua-app.vercel.app'
+export const API_URL = 'http://localhost:5050'
 
 
 // For url with header name change
