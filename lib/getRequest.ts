@@ -15,9 +15,14 @@ export const getDuaNames = async () => {
     return duaNames.json()
 }
 
-export const getDuas = async (cat_id: any) => {
-    const allDuas = await fetch(`${API_URL}/duas?cat_id=${cat_id}`)
+export const getAllDuas = async () => {
+    const allDuas = await fetch(`${API_URL}/all-duas`)
     return allDuas.json()
+}
+
+export const getDuas = async (cat_id: any) => {
+    const duaByCategories = await fetch(`${API_URL}/duas?cat_id=${cat_id}`)
+    return duaByCategories.json()
 }
 
 

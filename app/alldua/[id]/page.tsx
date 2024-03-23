@@ -1,9 +1,9 @@
 import Action from "@/components/duas/Action";
-import { getDuas, getSingleDua } from "@/lib/getRequest";
+import { getAllDuas, getDuas, getSingleDua } from "@/lib/getRequest";
 import Image from "next/image";
 
 export async function generateStaticParams() {
-    const allDuas = await getDuas()
+    const allDuas = await getAllDuas()
     return allDuas.map((dua: any) => ({
         id: dua.dua_id.toString()
     }))
@@ -13,8 +13,6 @@ const page = async ({ params }: { params: any }) => {
     const { id } = params
     const res = await getSingleDua(id)
     const dua = res[0]
-    
-    console.log(dua)
 
     return (
         <div>
